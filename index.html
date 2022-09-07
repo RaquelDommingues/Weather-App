@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>She Codes Plus</title>
+    <meta charset="UTF-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="src/styles.css" rel="stylesheet" type="text/css" />
+    <link
+         href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+         rel="stylesheet"
+         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+         crossorigin="anonymous"
+        />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="row">
+            <div 
+            class=
+                "search-bar" 
+            style="
+                margin-top: 20px;
+                margin-bottom: 20px;
+                ">
+                <form id="searchBar">
+                    <input id="query"
+                    type="text"
+                    placeholder="Location"
+                    autocomplete="off"
+                    >
+                    <button style="border-radius: 20px;" id="search" type="submit">Search</button>
+                    <button style="border-radius: 20px;" id="current-location" type="click">Locate me</button>
+                </form>
+            </div>
+
+            <div class="col-12">
+            <h1 id="city" style="
+                margin-top: 20px;
+                margin-bottom: 0;
+                color: aliceblue;
+                font-size: 70px;">
+                Lisbon
+            </h1>
+            <h2 style="
+                color: aliceblue;
+                font-size: 30px;
+                margin-top: 8px;">
+                Date
+            </h2>
+            </div>
+                <div class="col-4 current-min-temperature" style="margin-top: 140px">
+                    <div>
+                        Min
+                    </div>
+                    <div>
+                        <span id="baseValue">17</span>
+                        <sup class="units">
+                            <span><a href="#" id="celsius-link">°C</a></span>
+                            <span id="bar-min-temp">|</span>
+                            <span><a href="#" id="fahrenheit-link" onclick="celsiusTOF();return false;">F</a></span>
+                        </sup>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="current-emoji">
+                        🌞
+                    </div>
+                    <div class="current-temperature">
+                        <span id="current-baseValue">30</span>
+                        <sup class="units-current-temp">
+                            <span><a href="#" id="celsius-link">°C</a></span>
+                            <span id="bar-current-temp">|</span>
+                            <span><a href="#" id="fahrenheit-link">F</a></span>
+                        </sup>
+                    </div>
+                </div>
+                <div class="col-4 current-max-temperature" style="margin-top: 140px">
+                    <div>
+                        Max
+                    </div>
+                    <div>
+                        <span id="baseValue">32</span>
+                        <sup class="units">
+                            <span><a href="#" id="celsius-link">°C</a></span>
+                            <span id="bar-max-temp">|</span>
+                            <span><a href="#" id="fahrenheit-link">F</a></span>
+                        </sup>
+                    </div>
+                </div>
+                <hr style="
+                width: 90%;
+                margin: 0 auto;
+                color: rgb(207, 207, 207);
+                border-top: 2px solid;
+                ">
+                <br>
+                <div class="col-2 week-day">
+                    Mon
+                </div>
+                <div class="col-2 week-day">
+                    Tue
+                </div>
+                <div class="col-2 week-day">
+                    Wed
+                </div>
+                <div class="col-2 week-day">
+                    Thu
+                </div>
+                <div class="col-2 week-day">
+                    Fri
+                </div>
+                <div class="col-2 week-day">
+                    Sat
+                </div>
+                <div class="col-2 week-emoji">
+                    🌤️
+                </div>
+                <div class="col-2 week-emoji">
+                    ☁️
+                </div>
+                <div class="col-2 week-emoji">
+                    🌨️
+                </div>
+                <div class="col-2 week-emoji">
+                    🌧️
+                </div>
+                <div class="col-2 week-emoji">
+                    🌦️
+                </div>
+                <div class="col-2 week-emoji">
+                    🌥️
+                </div>
+                <div class="col-2 week-temp-max">
+                    <mark style="background-color: rgba(255, 165, 0); border-radius: 10px;">
+                    <span class="temperature">23</span>
+                    <sup class="units-forecast">
+                        <span><a href="#" id="celsius-link">°C</a></span>
+                        <span id="bar">|</span>
+                        <span><a href="#" id="fahrenheit-link">F</a></span>
+                    </sup>
+                    </mark>
+                </div>
+                <div class="col-2 week-temp-max">
+                    <mark style="background-color: rgba(255, 165, 0); border-radius: 10px;">
+                    <span class="temperature">19</span>
+                    <sup class="units-forecast">
+                        <span><a href="#" id="celsius-link">°C</a></span>
+                        <span id="bar">|</span>
+                        <span><a href="#" id="fahrenheit-link">F</a></span>
+                    </sup>
+                    </mark>
+                </div>
+                <div class="col-2 week-temp-max">
+                    <mark style="background-color: rgba(255, 165, 0); border-radius: 10px;">
+                    <span class="temperature">10</span>
+                    <sup class="units-forecast">
+                        <span><a href="#" id="celsius-link">°C</a></span>
+                        <span id="bar">|</span>
+                        <span><a href="#" id="fahrenheit-link">F</a></span>
+                    </sup>
+                    </mark>                
+                </div>
+                <div class="col-2 week-temp-max">
+                    <mark style="background-color: rgba(255, 165, 0); border-radius: 10px;">
+                    <span class="temperature">15</span>
+                    <sup class="units-forecast">
+                        <span><a href="#" id="celsius-link">°C</a></span>
+                        <span id="bar">|</span>
+                        <span><a href="#" id="fahrenheit-link">F</a></span>
+                    </sup>
+                    </mark>
+                </div>
+                <div class="col-2 week-temp-max">
+                    <mark style="background-color: rgba(255, 165, 0); border-radius: 10px;">
+                    <span class="temperature">17</span>
+                    <sup class="units-forecast">
+                        <span><a href="#" id="celsius-link">°C</a></span>
+                        <span id="bar">|</span>
+                        <span><a href="#" id="fahrenheit-link">F</a></span>
+                    </sup>
+                    </mark>
+                </div>
+                <div class="col-2 week-temp-max">
+                    <mark style="background-color: rgba(255, 165, 0); border-radius: 10px;">
+                    <span class="temperature">21</span>
+                    <sup class="units-forecast">
+                        <span><a href="#" id="celsius-link">°C</a></span>
+                        <span id="bar">|</span>
+                        <span><a href="#" id="fahrenheit-link">F</a></span>
+                    </sup>
+                    </mark>
+                </div>
+                <div class="col-2 week-temp-min">
+                    <mark style="background-color: rgb(3, 186, 252); border-radius: 10px;">
+                    <span class="temperature">14</span>
+                    <sup class="units-forecast">
+                        <span><a href="#" id="celsius-link">°C</a></span>
+                        <span id="bar">|</span>
+                        <span><a href="#" id="fahrenheit-link">F</a></span>
+                    </sup>
+                    </mark>
+                </div>
+                <div class="col-2 week-temp-min">
+                    <mark style="background-color: rgb(3, 186, 252); border-radius: 10px;">
+                    <span class="temperature">12</span>
+                    <sup class="units-forecast">
+                        <span><a href="#" id="celsius-link">°C</a></span>
+                        <span id="bar">|</span>
+                        <span><a href="#" id="fahrenheit-link">F</a></span>
+                    </sup>
+                    </mark>
+                </div>
+                <div class="col-2 week-temp-min">
+                    <mark style="background-color: rgb(3, 186, 252); border-radius: 10px;">
+                    <span class="temperature">5</span>
+                    <sup class="units-forecast">
+                        <span><a href="#" id="celsius-link">°C</a></span>
+                        <span id="bar">|</span>
+                        <span><a href="#" id="fahrenheit-link">F</a></span>
+                    </sup>
+                    </mark>
+                </div>
+                <div class="col-2 week-temp-min">
+                    <mark style="background-color: rgb(3, 186, 252); border-radius: 10px;">
+                    <span class="temperature">9</span>
+                    <sup class="units-forecast">
+                        <span><a href="#" id="celsius-link">°C</a></span>
+                        <span id="bar">|</span>
+                        <span><a href="#" id="fahrenheit-link">F</a></span>
+                    </sup>
+                    </mark>
+                </div>
+                <div class="col-2 week-temp-min">
+                    <mark style="background-color: rgb(3, 186, 252); border-radius: 10px;">
+                    <span class="temperature">12</span>
+                    <sup class="units-forecast">
+                        <span><a href="#" id="celsius-link">°C</a></span>
+                        <span id="bar">|</span>
+                        <span><a href="#" id="fahrenheit-link">F</a></span>
+                    </sup>
+                    </mark>
+                </div>
+                <div class="col-2 week-temp-min">
+                    <mark style="background-color: rgb(3, 186, 252); border-radius: 10px;">
+                    <span class="temperature">12</span>
+                    <sup class="units-forecast">
+                        <span><a href="#" id="celsius-link">°C</a></span>
+                        <span id="bar">|</span>
+                        <span><a href="#" id="fahrenheit-link">F</a></span>
+                    </sup>
+                    </mark>
+                </div>
+            <br>
+            <br>
+        </div>
+        <script src="src/jvs.js"></script>
+</body>
+</html>

@@ -1,0 +1,174 @@
+/* Overall Page customization */
+body {
+    height: 100vh;
+    background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+    margin: 200px;
+}
+.container {
+    background: linear-gradient(to bottom, rgba(6, 24, 46, 0.2) 0%, rgba(54, 78, 97, 0.2) 100%);
+    box-shadow: 0 0 5px 3px rgb(240, 248, 255, 0.25);
+    border-radius: 30px;
+    text-align: center;
+    margin: 40px auto;
+    padding: 20px auto;
+}
+
+#celsius-link, #fahrenheit-link {
+    text-decoration: none;
+    color: aliceblue;
+}
+
+#celsius-link:hover, #fahrenheit-link:hover {
+    text-shadow: 2px 2px aliceblue;
+    color: rgb(240, 248, 255, 0);
+}
+
+.temperature {
+    color: aliceblue;
+}
+
+
+/* Search Bar customization */
+
+.search-bar {
+    margin-top: 20px;
+    font-family: 'Comfortaa';
+    font-size: 15px;
+}
+
+input {
+    padding-left: 20px;
+    color: rgb(240, 248, 255, 0.8);
+    height: 40px;
+    width: 70%;
+    border-radius: 20px;
+    background: rgba(86, 95, 123, 0.5);
+    border-style: groove;
+    border-color: rgb(240, 248, 255, 0.25);
+}
+
+input::placeholder {
+    color: rgb(240, 248, 255, 0.5);
+}
+
+input:focus{
+    outline: none;
+}
+
+button {
+	width: 100px;
+	height: 40px;
+	cursor: pointer;
+	border: none;
+	font-family: 'Comfortaa', cursive;
+	color: rgba(255,255,255,0.5);
+	font-size: 20px;
+	box-shadow: inset 0px 3px 5px rgba(255,255,255,0.5), 0px 0px 10px rgba(0,0,0,0.15);
+	background: rgb(2,0,36);
+    background: linear-gradient(45deg, rgba(2,0,36,0) 5%, rgba(255,255,255,.5) 6%, rgba(255,255,255,0) 9%, rgba(255,255,255,.5) 10%, rgba(255,255,255,0) 17%, rgba(255,255,255,.5) 19%, rgba(255,255,255,0) 21%);
+	background-size: 150%;
+	background-position: right;
+	transition: 0.5s;
+}
+
+button:hover {
+	background-position: left;
+	color: white;
+	box-shadow: inset 0px 3px 5px rgba(255,255,255,1), 0px 0px 10px rgba(0,0,0,0.25);
+}
+
+button:focus {
+	outline: none;
+}
+
+.current-location {
+    position: relative;
+}
+
+/* Units */
+.units {
+    font-size: 15px;
+}
+
+.units-current-temp {
+    font-size: 30px;
+    position: relative;
+    top: -24px;
+    left: -5px
+}
+
+.units-forecast {
+    font-size: 10px;
+    position: relative;
+    top: -6px;
+}
+
+/* bars */
+
+#bar {
+    position: relative;
+    top: -0.5px;
+    color: aliceblue
+}
+
+#bar-current-temp {
+    position: relative;
+    top: -3px
+}
+
+#bar-min-temp, #bar-max-temp {
+    position: relative;
+    top: -1.5px;
+}
+
+
+/* City searched */
+
+h1, h2 {
+    font-family: 'Comfortaa', cursive;
+}
+
+/* City searched values */
+
+.current-min-temperature, .current-max-temperature {
+    font-family: 'Comfortaa';
+    font-size: 25px;
+    color: aliceblue;
+}
+
+.current-emoji {
+    font-size: 80px;
+    color: aliceblue;
+}
+
+.current-temperature {
+    font-size: 60px;
+    font-family: 'Comfortaa';
+    margin: 10px auto;
+    color: aliceblue;
+}
+
+/* Six-day forecast */
+
+.week-day {
+    font-size: 25px;
+    font-family: 'Comfortaa';
+    color: aliceblue;
+}
+
+.week-emoji {
+    font-size: 40px;
+    color: aliceblue;
+}
+
+.week-temp-min, .week-temp-max {
+    font-size: 18px;
+    font-family: 'Comfortaa';
+    color: aliceblue;
+}
+
+
+.week-temp-max {
+    padding-bottom: 10px;
+    color: aliceblue;
+}
