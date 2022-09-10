@@ -27,6 +27,19 @@ body {
     color: aliceblue;
 }
 
+p {
+    color: aliceblue;
+    margin-bottom: 5px;
+}
+
+#source {
+    color:aliceblue;
+    text-decoration:none;
+}
+
+#source:hover {
+    color:rgba(255, 165, 0);
+}
 
 /* Search Bar customization */
 
